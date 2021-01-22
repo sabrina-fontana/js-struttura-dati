@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>struttura dati</title>
+  </head>
+  <body>
+
+    <div class="search">
+      <div>
+        <label for="power">Search for power value</label>
+        <select id="power-select" name="power">
+          <option value="all">all values</option>
+        </select>
+      </div>
+      <div>
+        <label for="power">Search for type</label>
+        <select id="type-select" name="type">
+          <option value="all">all types</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="cards"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>

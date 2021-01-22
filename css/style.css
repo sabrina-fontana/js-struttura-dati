@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.search {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+select, option {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+}
+
+#cards {
+  font-size: 22px;
+  padding: 10px 0;
+
+}
