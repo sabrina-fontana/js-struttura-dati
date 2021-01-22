@@ -8,23 +8,28 @@
     <title>struttura dati</title>
   </head>
   <body>
-
-    <div class="search">
+    <div class="container">
       <div>
-        <label for="power">Search for power value</label>
-        <select id="power-select" name="power">
-          <option value="all">all values</option>
-        </select>
+        <div class="search-power">
+          <label for="power">Search for power value</label>
+          <select id="power-select" name="power">
+            <option value="all">all values</option>
+          </select>
+        </div>
+        <div id="cards-power"></div>
       </div>
+
       <div>
-        <label for="power">Search for type</label>
-        <select id="type-select" name="type">
-          <option value="all">all types</option>
-        </select>
+        <div class="search-type">
+          <label for="type">Search for type</label>
+          <select id="type-select" name="type">
+            <option value="all">all types</option>
+          </select>
+        </div>
+        <div id="cards-type"></div>
       </div>
     </div>
 
-    <div id="cards"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/script.js" charset="utf-8"></script>

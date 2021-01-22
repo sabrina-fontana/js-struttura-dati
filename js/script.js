@@ -182,10 +182,15 @@ const cards = [
 
 ];
 
-const cardsList = document.getElementById('cards');
+const cardsPowerList = document.getElementById('cards-power');
+const cardsTypeList = document.getElementById('cards-type');
+
 cards.forEach((element) => {
-  cardsList.innerHTML +=
+  cardsPowerList.innerHTML +=
   `<div>${element.cardName}</div>`
+  cardsTypeList.innerHTML +=
+  `<div>${element.cardName}</div>`
+
 });
 
 const powerValues = [];
@@ -221,7 +226,7 @@ const selectType = $('#type-select');
 
 // al change della selectPower
 selectPower.change(function() {
-  cardsList.innerHTML = '';
+  cardsPowerList.innerHTML = '';
 // PARSEINT SUL VALORE!!!!!!!!!!!!!
   let powerSelected = $(this).val();
   let filteredByPower;
@@ -235,14 +240,14 @@ selectPower.change(function() {
   }
 
   filteredByPower.forEach((element) => {
-    cardsList.innerHTML +=
+    cardsPowerList.innerHTML +=
     `<div>${element.cardName}</div>`;
   });
 });
 
 // al change della selectType
 selectType.change(function() {
-  cardsList.innerHTML = '';
+  cardsTypeList.innerHTML = '';
 // PARSEINT SUL VALORE!!!!!!!!!!!!!
   let typeSelected = $(this).val();
   let filteredByType;
@@ -255,7 +260,7 @@ selectType.change(function() {
   }
 
   filteredByType.forEach((element) => {
-    cardsList.innerHTML +=
+    cardsTypeList.innerHTML +=
     `<div>${element.cardName}</div>`;
   });
 });
