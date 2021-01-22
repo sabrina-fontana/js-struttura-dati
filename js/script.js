@@ -182,19 +182,37 @@ const cards = [
 
 ];
 
+// lista delle carte stampate in HTML
 const cardsPowerList = document.getElementById('cards-power');
 const cardsTypeList = document.getElementById('cards-type');
-
-cards.forEach((element) => {
-  cardsPowerList.innerHTML +=
-  `<div>${element.cardName}</div>`
-  cardsTypeList.innerHTML +=
-  `<div>${element.cardName}</div>`
-
-});
-
+// array di valori di power e di type
 const powerValues = [];
 const typeValues = [];
+// select in pagina
+const valuePowerOption = document.getElementById('power-select');
+const valueTypeOption = document.getElementById('type-select');
+// selettori per jquery
+const selectPower = $('#power-select');
+const selectType = $('#type-select');
+
+// *****FUNZIONI*****
+function addOptions(valuesArray, htmlOptions) {
+  valuesArray.forEach((element) => {
+    htmlOptions.innerHTML +=
+    `<option value="${element}">${element}</option>`
+  });
+};
+
+function writeCardName(array, htmlList) {
+  array.forEach((element) => {
+    htmlList.innerHTML +=
+    `<div>${element.cardName}</div>`
+  });
+};
+
+// ----------------------------------------
+writeCardName(cards, cardsPowerList);
+writeCardName(cards, cardsTypeList);
 
 cards.forEach((element) => {
   if (!powerValues.includes(element.score.power)) {
@@ -206,23 +224,11 @@ cards.forEach((element) => {
   }
 });
 
-const valuePowerOption = document.getElementById('power-select');
-const valueTypeOption = document.getElementById('type-select');
-
 // aggiungo una option per ogni valore di power
-powerValues.forEach((element) => {
-  valuePowerOption.innerHTML +=
-  `<option value="${element}">${element}</option>`
-});
+addOptions(powerValues, valuePowerOption);
 
 // aggiungo una option per ogni valore di type
-typeValues.forEach((element) => {
-  valueTypeOption.innerHTML +=
-  `<option value="${element}">${element}</option>`
-});
-
-const selectPower = $('#power-select');
-const selectType = $('#type-select');
+addOptions(typeValues, valueTypeOption);
 
 // al change della selectPower
 selectPower.change(function() {
@@ -239,10 +245,7 @@ selectPower.change(function() {
   });
   }
 
-  filteredByPower.forEach((element) => {
-    cardsPowerList.innerHTML +=
-    `<div>${element.cardName}</div>`;
-  });
+  writeCardName(filteredByPower, cardsPowerList);
 });
 
 // al change della selectType
@@ -259,8 +262,5 @@ selectType.change(function() {
   });
   }
 
-  filteredByType.forEach((element) => {
-    cardsTypeList.innerHTML +=
-    `<div>${element.cardName}</div>`;
-  });
+  writeCardName(filteredByType, cardsTypeList);
 });
